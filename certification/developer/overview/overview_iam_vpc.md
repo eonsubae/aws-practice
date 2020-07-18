@@ -106,7 +106,21 @@ IAM
 * 생체정보를 활용한 보안
   - 지문, 망막과 같은 생체정보를 활용한 인증도 사용할 수 있다
 
-
 ![mfa](multi_factor_authentication.png)
 
 ![mfa_in_aws](multi_factor_authentication_in_aws.png)
+
+### AWS Security Token Service(STS)
+
+STS란
+* 임시적인 요청이 가능한 제한된 권한 자격을 IAM user나 연합 유저에 부여하기 위해 사용되는 서비스다 
+* STS는 글로벌 단위의 서비스이며 단일 엔드포인트를 가지고 있다(https://sts.amazonaws.com)
+* 모든 리전에서 STS를 사용할 수 있다
+  - 사용할 수 없게 만들 수도 있다
+
+![sts](./sts.png)
+* 위의 그림의 예를 살펴보면 STS가 어떻게 활용되는지 이해할 수 있다
+* Andrea는 다른 계정의 서비스를 사용하려고 한다
+* 그러나 다른 계정의 서비스에 접근할 수 있는 권한이 없으므로 다른 계정의 역할에 접근할 수 있는 권한을 요청한다(1번)
+* 그러면 다른 계정의 역할이 STS를 사용해(2번) 임시적으로 접근할 수 있는 자격을 부여한다(3번)
+* 이렇게 얻은 임시적인 자격으로 Andrea는 다른 계정의 서비스를 사용한다
