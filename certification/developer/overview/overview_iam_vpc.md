@@ -149,3 +149,67 @@ STS란
 
 - 이 문제는 같은 화면에 있는 커스터마이즈 버튼을 눌러 보다 기억하기 쉬운 링크로 변경할 수 있다
 - 변경할 문자는 유니크한 값이어야 한다
+
+### Setting up a Billing Alarm
+
+빌링 알람 설정하기
+
+- AWS는 지불가격에 따라 메일로 알람이 오도록 설정할 수 있다
+- 빌링 알람은 오직 루트 계정에서만 접근할 수 있다
+
+![account_option_list](account_option_list.png)
+
+- 알람을 설정하는 페이지에 접근하기 위해서는 우선 루트 어카운트에 로그인 한 후 헤더에 있는 어카운트명을 클릭해 My Billing Dashboard에 접속해야 한다
+
+![billing_preference](billing_preference.png)
+
+- 대쉬보드 페이지가 뜨면 aside에 있는 Billing preferences를 누른다(빨간색 상자)
+- 프리티어 계정을 사용하고 있는 경우 무료 제공량에 거의 도달했거나 초과했을 때 메일을 받아볼 주소를 입력할 수 있다(초록색 상자)
+- 빌링 알람을 관리하려면 노란색 상자에 있는 Manage Billing Alerts를 누르면 CloudWatch페이지로 이동된다
+
+![cloudwatch_alarm](cloud_watch_alarm.png)
+
+- CloudWatch 페이지의 aside에 있는 Billing을 누르면 현재까지 설정한 빌링 알람 목록을 볼 수 있다
+- 초록색 상자 안에 있는 Create alarm 버튼을 누르면 새로 빌링 알람을 만들 수도 있다
+
+![creation_billing1](b_alarm_creation1.png)
+
+![creation_billing2](b_alarm_creation2.png)
+
+- 빨간 상자가 있는 폼에 알람을 발생시킬 한계값을 설정할 수 있다
+- 설정한 뒤 Next버튼을 누른다
+
+![sns_topic_creation](sns_topic_creation.png)
+
+- CloudWatch에서 SNS Topic을 생성시킬수 있는 화면이 나온다
+- SNS란 Simple Notification Service의 약어로 AWS에서 메시지를 보내는 서비스 중에 하나다
+- 토픽 이름과 알람을 받아볼 메일을 폼에 입력한 후 Create topic버튼을 누르면 알람이 만들어진다
+- 토픽이 생성되면 아래로 스크롤을 내려 Next버튼을 누른다
+
+![set_name_description_of_alarm](set_name_description_of_alarm.png)
+
+- 알람의 이름과 설명을 입력하는 란이 나온다
+- 입력하고 Next버튼을 누른다
+
+![alarm_preview](alarm_preview.png)
+
+- 지금까지 설정한 알람에 관한 내용들을 확인할 수 있다
+- 확인한 후 스크롤을 내려 Create alarm버튼을 누르면 알람이 생성된다
+
+![complete_alarm_creation](complete_alarm_creation.png)
+
+- 지금까지의 과정과 같이 새 알람을 생성할 수도 있고 기존의 알람을 관리할 수 있다
+- 빨간 상자에 있는 버튼을 클릭하면 Amazon SNS에서 대기중인 Subscription을 확인할 수 있을 것이다
+
+![sns_subs](sns_subscription.png)
+
+- 생성은 완료되었지만 아직 승인이 되지 않아 대기중(Pending)인 것을 알 수 있다
+- 이제 알람에 설정해놓은 이메일에 들어가 AWS로부터 온 메일이 없는지 확인해보자
+
+![sns_confirm_mail](sns_confirm_mail.png)
+
+- Confirm subscription을 눌러 알람을 승인한다
+
+![confirmed_sns](confirmed_sns.png)
+
+- 다시 SNS로 돌아가 새로고침을 해보면 Pending이었던 상태가 Confirmed으로 바뀐 것을 확인할 수 있을 것이다
