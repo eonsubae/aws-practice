@@ -283,3 +283,38 @@ MFA를 루트 계정에 설정하기
 - 엣지 로케이션과 마찬가지로 클라우드 프론트 네트워크의 한 부분이다
 - AWS 서비스들과 엣지 로케이션 사이에서 커다란 캐시 데이터를 보관할 수 있다
 - 전 세계에 11개의 리져널 엣지 캐시가 있다
+
+### Virtual Private Cloud Overview
+
+Virtual Private Cloud
+
+- 혼자서 모든 자원을 점유하는 데이터 센터와 달리 AWS와 같은 퍼블릭 클라우드를 사용할 때는 논리적으로 격리된 자신만의 네트워크와 IP 범위가 필요하다
+
+![vpc_overview](vpc_overview.png)
+
+- 위 그림에서 보이는 바와 같이 VPC는 하나의 리전 안에 소속되어 있다
+- VPC는 한 리전 안에 5개까지 보유할 수 있으며, 만약 더 많은 VPC가 필요하면 AWS와 협상할 수 있다
+- 그리고 VPC 안에는 가용 영역(AZ)마다 서브넷을 생성할 수 있다
+  - 서브넷은 퍼블릭 서브넷과 프라이빗 서브넷으로 나뉜다
+- 서브넷 안에 자원을 런치시킬 수 있다
+- 서브넷 끼리는 같은 가용 영역 안에 있지 않더라도 VPC router를 통해 통신할 수 있다
+- VPC router는 IP주소 범위가 저장된 라우터 테이블을 가지고 있다
+- VPC에 IP 범위를 지정하면 라우터 테이블은 모든 가용영역과 내부의 서브넷을 자동적으로 라우팅한다
+- 인터넷 게이트웨이(Internet gateway)는 외부와의 통신을 가능하게 해준다
+- 예를 들어, 퍼블릭 서브넷의 인스턴스가 인터넷에 요청을 보내고 싶다면 IG를 통해야 한다
+- 외부와의 통신을 위해서는 Internet gateway id와 목적지(destination)가 필요하다
+
+![cidr_block](cidr_block.png)
+
+- 각각의 VPC는 구분을 위해 다른 CIDR block을 가진다
+- 실제로 AWS에서 VPC를 구성해보며 알아보자
+
+![vpc_initial_page](vpc_initial_page.png)
+
+- 우선 VPC 서비스를 검색해 들어가보면 위와 같은 페이지가 보일 것이다
+- 내 VPC, Subnet, Route Table, Internet Gateway 목록을 관리하고 싶으면 빨간 상자에 있는 Your VPC를 클릭한다
+
+![my_vpc](my_vpc_management.png)
+
+- 앞선 페이지에서 Your VPC를 클릭했을 때 나오는 VPC 관리 페이지다
+- 다른 VPC의 구성 요소들도 앞선 화면의 aside에서 클릭하면 비슷한 모습으로 리스팅되는 것을 확인할 수 있을 것이다
