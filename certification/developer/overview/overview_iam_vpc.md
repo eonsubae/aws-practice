@@ -248,3 +248,15 @@ MFA를 루트 계정에 설정하기
 
 - MFA 설정이 완료됐음을 확인할 수 있다
 - 로그아웃한 뒤 다시 로그인해보면 패스워드를 입력한 뒤에 Google Authenticator에서 코드를 입력해야 접속이 가능함을 확인할 수 있다
+
+### Configure Password Policy
+
+![pw_policy](pw_policy.png)
+
+- 패스워드 정책을 설정하려면 Apply an IAM policy 항목을 누르고 Manage Password Policy버튼을 눌러야 한다
+
+![set_pw_policy](set_pw_policy.png)
+
+- IAM Password policy는 루트 유저의 패스워드에는 적용이 불가능하다
+- 패스워드의 최소 길이부터 다양한 옵션들이 있는데 가능한한 강력한 정책을 설정해놓는 것이 바람직하다
+- AWS는 앞서 설정했던 MFA와 함께 패스워드 정책을 사용할 것을 권장하고 있다
