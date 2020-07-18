@@ -92,3 +92,21 @@ IAM
 * SSL/TLS certificate는 몇몇 AWS 서비스에서만 사용할 수 있다
 * AWS는 서버를 인증할 때 AWS Certificate Manager(ACM)을 사용해 프로비저닝, 관리, 배포에 사용할 것을 추천한다
 * ACM이 지원되지 않는 지역에서만 https 연결이 필요할 때 IAM을 사용하는 것이 베스트 프랙티스다
+
+### Multi Factor Authentication
+
+접근 단계를 추가해 보안을 강화하기
+* 가장 기본적인 접근은 유저의 아이디와 패스워드를 이용한 것이다
+* Physical MFA
+  - USB같은 곳에 물리적인 토큰을 저장해 놓을 수 있다
+  - 그러나 USB는 이를 빼앗길 위험이 있다
+* Virtual MFA
+  - 인증할 때마다 유저의 핸드폰과 같은 기기에 특정 토큰을 생성해 전달하고 전달받은 토큰으로 인증하는 방식을 주로 사용한다
+  - Google Authenticator같은 앱을 주로 사용한다
+* 생체정보를 활용한 보안
+  - 지문, 망막과 같은 생체정보를 활용한 인증도 사용할 수 있다
+
+
+![mfa](multi_factor_authentication.png)
+
+![mfa_in_aws](multi_factor_authentication_in_aws.png)
