@@ -318,3 +318,37 @@ Virtual Private Cloud
 
 - 앞선 페이지에서 Your VPC를 클릭했을 때 나오는 VPC 관리 페이지다
 - 다른 VPC의 구성 요소들도 앞선 화면의 aside에서 클릭하면 비슷한 모습으로 리스팅되는 것을 확인할 수 있을 것이다
+
+### Route 53 - Register Domain
+
+도메인 등록하기
+
+- 런칭한 서비스를 알기 쉽게 접근가능하도록 하려면 도메인이 필요하다
+- 물론 도메인 등록은 AWS가 아닌 다른 서비스에서도 가능하지만 여기서는 Route 53이라는 AWS 내부의 서비스를 사용한다
+
+![route53_initial_page](route_53_initial_page.png)
+
+- Domain Register란의 Get started now 버튼을 누르면 도메인 등록 페이지로 이동된다
+
+![domain_register_page](domain_register_page.png)
+
+- Register Domain버튼을 누르면 도메인을 생성할 수 있는 화면이 나온다
+
+![domain_name_choice](domain_name_choice.png)
+
+- 원하는 도메인 네임을 입력하고 체크를 누르면 해당 도메인을 사용할 수 있는지 그리고 관련된 다른 도메인 중에 사용할 수 있는 것들이 있는지를 알려주는 목록이 나온다
+
+![domain_name_check](dns_check.png)
+
+- Add to cart를 누르면 해당 도메인이 카트에 추가된다
+
+* 원하는 도메인을 카트에 넣었으면 Continue버튼을 눌러 다음 페이지로 넘어간다
+
+![domain_detail](domain_info_detail.png)
+
+- 도메인과 관련된 정보들을 입력한다
+
+![domain_register_final_page](domain_register_final_page.png)
+
+- 화면 상단에 앞선 페이지에서 입력한 개인정보들이 있을 것이다
+- Terms and Condition에 동의를 체크하고 Complete Order버튼을 클릭하는 것으로 도메인 등록이 완료된다
