@@ -213,3 +213,38 @@ STS란
 ![confirmed_sns](confirmed_sns.png)
 
 - 다시 SNS로 돌아가 새로고침을 해보면 Pending이었던 상태가 Confirmed으로 바뀐 것을 확인할 수 있을 것이다
+
+### Active MFA on the Root Account
+
+MFA를 루트 계정에 설정하기
+
+- 우선 IAM에 접속한다
+
+![iam_for_mfa](iam_for_mfa.png)
+
+- Security Status에 있는 Delete your access keys를 누르면 아래와 같은 버튼이 나온다
+
+![iam_for_mfa_btn](iam_for_mfa_delete_your_root_access_keys.png)
+
+- 빨간 상자 안의 버튼을 눌러 관리화면으로 이동하자
+
+![security_credential](security_credentials.png)
+
+- MFA란을 클릭하면 설명과 Activate MFA버튼이 나온다
+- 버튼을 클릭하면 MFA 생성 모달이 나올 것이다
+
+![mfa_modal](mfa_modal.png)
+
+- 여기서는 Virtual MFA device을 옵션을 지정해 휴대폰을 이용한 인증을 추가할 것이다
+- 그리고 안전한 인증을 위해 Google Authenticator를 활용할 것이다
+- Virtual MFA device 라디오 버튼을 체크하고 Continue버튼을 누르자
+
+![virtual_mfa](virtual_mfa.png)
+
+- Show QR code를 누르면 스캔 가능한 QR code가 생성될 것이다
+- Google Authenticator앱을 휴대폰에 설치하고 스캔을 통해 아래 폼에 두 개의 MFA code를 입력하고 Assign MFA버튼을 누른다
+
+![mfa_complete](mfa_complete.png)
+
+- MFA 설정이 완료됐음을 확인할 수 있다
+- 로그아웃한 뒤 다시 로그인해보면 패스워드를 입력한 뒤에 Google Authenticator에서 코드를 입력해야 접속이 가능함을 확인할 수 있다
