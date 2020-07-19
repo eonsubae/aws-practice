@@ -26,6 +26,12 @@ provider:
   runtime: nodejs12.x
   region: ap-northeast-1
 
+plugins:
+  - '@anttiviljami/serverless-stack-output'
+
+custom:
+  output:
+    handler: scripts/config.handler
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
