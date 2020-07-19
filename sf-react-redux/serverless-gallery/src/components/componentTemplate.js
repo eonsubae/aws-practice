@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Button } from 'antd';
+
 /* local imports */
 import { myAction } from 'actions/actionsTemplate';
 /* this component initial state */
@@ -42,9 +44,9 @@ class MyComponent extends Component {
     /* return JSX transpiled component */
     return (
       <div style={styles.div}>
-        <button onClick={this.handleStateClick}>
+        <Button type="danger" onClick={this.handleStateClick}>
           {stateMessage}, {propMessage}
-        </button>
+        </Button>
         <br />
         <br />
         <button onClick={this.handleReduxClick}>{myDate.getTime()}</button>
