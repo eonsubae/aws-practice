@@ -30,6 +30,12 @@ plugins:
   - '@anttiviljami/serverless-stack-output'
 
 custom:
+  resourceNames:
+    uniqueWord: mango
+    uniqueStage: ${self:provider.stage}${self:custom.resourceNames.uniqueWord}
+    userPool: ${self:custom.resourceNames.uniqueStage}-user-pool
+    identityPool: ${self:custom.resourceNames.uniqueStage}IdentityPool
+    poolClient: ${self:custom.resourceNames.uniqueStage}-user-pool-client
   output:
     handler: scripts/config.handler
 # you can overwrite defaults here
@@ -110,12 +116,4 @@ functions:
 
 # you can add CloudFormation resource templates here
 resources:
-  Resources:
-    examplebucket:
-      Type: AWS::S3::Bucket
-      Properties:
-        BucketName: my-example-bucket-for-gallery-pj
-  Outputs:
-    examplebucketurl:
-      Value:
-        Ref: examplebucket
+  - ${file(resources/security.yml)}

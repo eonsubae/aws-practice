@@ -17,6 +17,7 @@
   "scripts": {
     "start": "env-cmd ./.dev.env react-app-rewired start",
     "build": "env-cmd ./.dev.env react-app-rewired build",
+    "deploy": "cd backend && serverless deploy -v",
     "test": "env-cmd ./.dev.env react-app-rewired test",
     "eject": "react-scripts eject"
   },
