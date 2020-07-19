@@ -1,5 +1,5 @@
 /* local imports (all our reducers) */
-import myReducer from './reducerTemplate';
+import authentication from './authentication';
 
 /* export reducers from a single entry point */
-export { myReducer };
+export { authentication };
