@@ -103,13 +103,13 @@ functions:
 #      variable2: value2
 
 # you can add CloudFormation resource templates here
-#resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
+resources:
+  Resources:
+    examplebucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: my-example-bucket-for-gallery-pj
+  Outputs:
+    examplebucketurl:
+      Value:
+        Ref: examplebucket
