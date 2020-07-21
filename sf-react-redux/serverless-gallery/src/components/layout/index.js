@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 /* local imports */
-// import HomeLayout from './home';
+import HomeLayout from './home';
 import LandingLayout from './landing';
 import { localPropTypes } from 'lib/prop-types';
 import { signIn } from 'actions/authentication';
@@ -26,8 +26,7 @@ class Layout extends Component {
     /* if credentials are present, render home component,
         else render landing page for login, create account, etc. */
     if (this.props.credentials) {
-      // return <HomeLayout />;
-      return <div>Blank</div>;
+      return <HomeLayout />;
     } else {
       return <LandingLayout />;
     }
