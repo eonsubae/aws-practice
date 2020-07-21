@@ -99,19 +99,19 @@ Resources:
               #           - '*'
               #           - '$'
               #           - '{cognito-identity.amazonaws.com:sub}/*'
-              # - Effect: 'Allow'
-              #   Action:
-              #     - 'dynamodb:GetItem'
-              #     - 'dynamodb:PutItem'
-              #     - 'dynamodb:DeleteItem'
-              #     - 'dynamodb:Query'
-              #   Resource:
-              #     - Fn::GetAtt: [PicturesTable, Arn]
-              #   Condition:
-              #     ForAllValues:StringEquals:
-              #       dynamodb:LeadingKeys:
-              #         Fn::Join:
-              #           ['', ['$', '{cognito-identity.amazonaws.com:sub}']]
+              - Effect: 'Allow'
+                Action:
+                  - 'dynamodb:GetItem'
+                  - 'dynamodb:PutItem'
+                  - 'dynamodb:DeleteItem'
+                  - 'dynamodb:Query'
+                Resource:
+                  - Fn::GetAtt: [PicturesTable, Arn]
+                Condition:
+                  ForAllValues:StringEquals:
+                    dynamodb:LeadingKeys:
+                      Fn::Join:
+                        ['', ['$', '{cognito-identity.amazonaws.com:sub}']]
 # when the stack is sucessfully build, it will print the following variables. Which
 # correspond to properties of the created resources. This properties will be used
 # as environment variable via a .env file.
