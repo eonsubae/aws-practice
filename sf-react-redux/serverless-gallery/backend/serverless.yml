@@ -35,6 +35,7 @@ custom:
     uniqueStage: ${self:provider.stage}${self:custom.resourceNames.uniqueWord}
     userPool: ${self:custom.resourceNames.uniqueStage}-user-pool
     identityPool: ${self:custom.resourceNames.uniqueStage}IdentityPool
+    pictureTable: ${self:custom.resourceNames.uniqueStage}-picture-table
     poolClient: ${self:custom.resourceNames.uniqueStage}-user-pool-client
   output:
     handler: scripts/config.handler
@@ -117,3 +118,4 @@ functions:
 # you can add CloudFormation resource templates here
 resources:
   - ${file(resources/security.yml)}
+  - ${file(resources/data-storage.yml)}
