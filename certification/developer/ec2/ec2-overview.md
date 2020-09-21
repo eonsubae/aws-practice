@@ -10,7 +10,7 @@ EC2란
 AWS사이트에서 EC2 런치화면을 보면서 알아보기
 ![ec2-launch-first](./img/ec2-launch-first.png)
 * 런치 버튼을 누르면 위 사진과 같이 운영체제를 선택할 수 있는 화면이 나온다
-* 정확히 각각의 운영체제란 하나의 이미지(AMI)로 특정한 설정을 포함하고 있는 템플릿이다
+* 각각의 운영체제란 하나의 이미지(AMI)로 특정한 설정을 포함하고 있는 템플릿이다
 * 처음 화면에 보이는 이미지들은 자주 사용되는 대표적인 이미지들이다
 * 이 외에도 옆에 있는 탭에 보이듯이 개인 이미지나 마켓플레이스, 다른 커뮤니티의 이미지를 사용해서 인스턴스를 런칭할 수도 있다
 
@@ -64,3 +64,18 @@ Dedicated Hosts
 ![ec2-dedicated-hosts](./img/ec2-dedicated-hosts.png)
 * 앞서 봤던 옵션들과는 다른 성격의 옵션으로, 다른 인스턴스들은 하드웨어 안의 자원을 공유하는 반면 이 옵션을 사용하면 물리적인 서버를 독점적으로 사용할 수 있다
 * 라이선스 비용을 줄일 수 있는 옵션이기도 하다
+
+Scheduled Instance
+![ec2-scheduled-instance](./img/ec2-scheduled-instances.png)
+* 주기적으로 특정 작업을 수행할 수 있도록 해주는 인스턴스다
+* 화면에 써져 있듯이 매일, 주간, 월간 예약이 가능하다
+* 사용할 수 있는 리전과 그렇지 않은 리전이 있으니 주의하자
+  - 2020.09.21 현재 가능한 리전은 다음과 같다
+  - US East (N. Virginia)
+  - EU (Ireland)
+  - US West (Oregon)
+
+Elastic Block Store(EBS)
+* EC2 인스턴스 안에 포함시킬 수 있는 저장장치다
+![elastic-block-store](./img/ebs-block-store.png)
+* 사용목적에 따라 볼륨타입을 선택할 수 있다
