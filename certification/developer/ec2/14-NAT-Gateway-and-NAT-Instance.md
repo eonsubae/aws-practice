@@ -19,4 +19,7 @@ NAT Gateway Overview
 * 프라이빗 서브넷에 있는 인스턴스가 라우트 테이블을 통해 NAT Gateway를 참조하는 방식으로 사용할 수 있다
 * 기억해야 하는 것은 프라이빗 서브넷에 있는 라우트 테이블은 NAT Instance는 참조할 수 없다는 것이다
 
-!NAT Instance Overview부터 다시 써야 함
+NAT Instance Overview
+![nat-ins-ov](./img/nat/nat-ins-ov.png)
+* NAT gateway와 차이는 인스턴스를 직접 관리한다는 점이다
+* 그 외의 라우트 테이블 등의 동작은 같다
