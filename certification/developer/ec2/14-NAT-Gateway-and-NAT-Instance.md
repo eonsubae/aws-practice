@@ -8,10 +8,10 @@
 
 NAT Gateway와 NAT Instance 비교
 ![nats-versus](./img/nat/nats-versus.png)
-* NAT란 Network Address Translation의 약자로 프라이빗 아이피 주소를 퍼블릭 아이피 주소로 변환해 인터넷 연결을 가능하게 만드는 역할을 한다
-* 위 표에 자세하게 나와 있듯이, NAT 서비스에서 Gateway와 Instance의 차이는 NAT작업에 대한 관리를 직접 하느냐 그렇지 않으면 AWS에 맡기느냐에 있다
+* NAT란 Network Address Translation의 약자로 프라이빗 아이피 주소를 퍼블릭 아이피 주소로 변환해 인터넷 연결을 가능하게 만든다
+* NAT 서비스에서 Gateway와 Instance의 차이는 NAT작업에 대한 관리를 직접 하느냐 그렇지 않으면 AWS에 맡기느냐에 있다
 * NAT Instance는 직접 EC2 인스턴스를 런칭해서 NAT가 가능하도록 설정해주어야 한다
-* NAT Instance는 많은 것을 직접 관리해야 하는 낡은 방식(Old way)이지만 바스티온 호스트를 사용할 수 있는 점은 NAT Gateway에 비해 장점이라 할 수 있다
+* NAT Instance는 많은 것을 직접 관리해야 하는 낡은 방식(Old way)이지만 바스티온 호스트로 사용할 수 있는 점은 NAT Gateway에 비해 장점이다
 
 NAT Gateway Overview
 ![nat-ov](./img/nat/nat-ov.png)
@@ -24,4 +24,4 @@ NAT Instance Overview
 * NAT gateway와 차이는 인스턴스를 직접 관리한다는 점이다
 * 그 외의 라우트 테이블 등의 동작은 같다
 * 퍼블릭 클라우드의 장점이 스스로 관리해야 하는 것들을 줄여주는 것이라는 점에서 보다 베스트 프랙티스는 NAT Gateway를 사용하는 것이다
-* 바스티온 호스트가 꼭 필요한 경우가 아니면 사용하지 않는 것이 좋다
+* NAT Instance는 바스티온 호스트가 꼭 필요한 경우가 아니면 사용하지 않는 것이 좋다
