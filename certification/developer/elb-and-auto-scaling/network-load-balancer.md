@@ -34,7 +34,7 @@ systemctl enable httpd
 cd /var/www/html
 aws s3 cp s3://<My-Bucket-Name>/names.csv ./
 aws s3 cp s3://<My-Bucket-Name>/index.txt ./
-EC2NAME=`cat ./names.csv/sort -R|head -n 1|xargs`
+EC2NAME=`cat ./names.csv|sort -R|head -n 1|xargs`
 sed "s/INSTANCE/$EC2NAME/" index.txt > index.html
 ```
 
