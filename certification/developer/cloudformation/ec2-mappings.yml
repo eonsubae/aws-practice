@@ -1,0 +1,21 @@
+Mappings:
+  InstanceMap:
+    ap-northeast-1:
+      dev: t2.micro
+      prod: m1.small
+    ap-northeast-2:
+      dev: m1.small
+      prod: m1.large
+  AMIMap:
+    ap-northeast-1:
+      dev: ami-0a887e401f7654935
+      prod: ami-0a887e401f7654935
+    ap-northeast-2:
+      dev: ami-01c94064639c71719
+      prod: ami-01c94064639c71719
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [AMIMap, !Ref "AWS::Region", dev]
+      InstanceType: !FindInMap [InstanceMap, !Ref "AWS::Region", dev]
